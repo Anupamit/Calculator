@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script type="text/javascript">
+
+    let add = ()=>{
+      let firstnumber = Number(document.getElementById('dd').value)
+      let secondnumber = Number(document.getElementById('yy').value)
+      console.log(typeof firstnumber)
+      let result = firstnumber + secondnumber
+      document.getElementById('answer').value = result;
+    }
+
+    let substract = ()=>{
+      let firstnumber = Number(document.getElementById('dd').value)
+      let secondnumber = Number(document.getElementById('yy').value)
+      let result = firstnumber - secondnumber
+      document.getElementById('answer').value = result;
+    }
+
+    let multiply = ()=>{
+      let firstnumber = Number(document.getElementById('dd').value)
+      let secondnumber = Number(document.getElementById('yy').value)
+      if(firstnumber> 0 && secondnumber> 0){
+        document.getElementById('answer').value = firstnumber * secondnumber;
+      }
+    }
+
+    let divide = ()=>{
+      let firstnumber = Number(document.getElementById('dd').value)
+      let secondnumber = Number(document.getElementById('yy').value)
+      if(firstnumber > 0 && secondnumberv >1){
+        let result = firstnumber / secondnumber
+        document.getElementById('answer').value = result;
+      }
+    }
+
+    let reset = ()=>{
+      document.getElementById('dd').value =''
+      document.getElementById('yy').value = ''
+      document.getElementById('answer').value = '';
+    }
+
+  </script>
+  <body>
+    <div>
+    Enter the First number : <input type="number" id="dd">
+    </div>
+    Enter the Second number: <input type="number" id="yy">
+    <div>
+    <button onclick="add()">Add</button>
+    <button onclick="substract()">subtract</button>
+    <button onclick="multiply()">multiply</button>
+    <button onclick="divide()">divide</button>
+    </div>
+    <div>
+    <input id="answer">
+    <button onclick="reset()">reset</button>
+    </div>
+  </body>
+</html>
