@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script type="text/javascript">
+
+  function reset() {
+    document.getElementById('dd').value =''
+    document.getElementById('yy').value = ''
+    document.getElementById('add').innerHTML = '';
+    document.getElementById('subtract').innerHTML = '';
+    document.getElementById('multiply').innerHTML = '';
+    document.getElementById('divide').innerHTML = '';
+  }
+
+  function result () {
+    const firstnumber = Number(document.getElementById('dd').value)
+    const secondnumber = Number(document.getElementById('yy').value)
+    document.getElementById('add').innerHTML = firstnumber + secondnumber;
+    document.getElementById('subtract').innerHTML = firstnumber - secondnumber;
+    document.getElementById('multiply').innerHTML = firstnumber * secondnumber;
+    document.getElementById('divide').innerHTML = firstnumber / secondnumber;
+  }
+
+  </script>
+  <body>
+    <div>
+      Enter the First number : <input type="number" id="dd">
+    </div>
+      Enter the Second number: <input type="number" id="yy">
+    <div>
+      Addition : <p id="add"></p>
+    </div>
+      subtract : <p id="subtract"></p>
+    <div>
+      multiply : <p id="multiply"></p>
+    </div>
+    <div>
+      divide : <p  id="divide"></p>
+    </div>
+    <div>
+    <button onclick="result()">result</button>
+    </div>
+    <div>
+    <button onclick="reset()">reset</button>
+    </div>
+  </body>
+  </html>
