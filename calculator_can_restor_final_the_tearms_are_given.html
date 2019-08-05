@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>calculator</title>
+    <style>
+      table, th, td {
+      border: 3px solid black;
+      }
+
+      table {
+      width: 20%;
+      }
+
+      th {
+      height: 50px;
+      }
+  </style>
+  <script type="text/javascript">
+      function addTableToHTML(){
+        let tableHtml = ` <table>
+                 <tr>
+                   <th>First Number:</th>
+                   <td><input type="number" id="dd"></td>
+                 </tr>
+                 <tr>
+                   <th>Second Number:</th>
+                   <td><input type="number" id="yy"></td>
+                 </tr>
+                 <tr>
+                   <th>Addition :</th>
+                   <td><p id="add"> </p></td>
+                 </tr>
+                 <tr>
+                   <th>Subtract :</th>
+                   <td><p id="subtract">  </p></td>
+                 </tr>
+                 <tr>
+                   <th>Multiply :</th>
+                   <td><p id="multiply"></p></td>
+                 </tr>
+                 <tr>
+                   <th>Divide :</th>
+                   <td> <p id="divide"></p> </td>
+                 </tr>
+                 <tr>
+                   <th><button onclick="result()">result</button></th>
+                   <td><button onclick="reset()">reset</button></td>
+                 </tr>
+              </table>`
+
+              document.getElementById('tablecontent').innerHTML = tableHtml
+              document.getElementById('restore').innerHTML = ``
+      }
+      function reset() {
+        document.getElementById('dd').value =``
+        document.getElementById('dd').value =''
+        document.getElementById('yy').value = ''
+        document.getElementById('add').innerHTML = '';
+        document.getElementById('subtract').innerHTML = '';
+        document.getElementById('multiply').innerHTML = '';
+        document.getElementById('divide').innerHTML = '';
+        document.getElementById('tablecontent').innerHTML = ``;
+        document.getElementById('restore').innerHTML = `<button onclick="addTableToHTML()">restore</button>`;
+
+      }
+
+      function result () {
+        const firstnumber = Number(document.getElementById('dd').value)
+        const secondnumber = Number(document.getElementById('yy').value)
+        document.getElementById('add').innerHTML = firstnumber + secondnumber;
+        document.getElementById('subtract').innerHTML = firstnumber - secondnumber;
+        document.getElementById('multiply').innerHTML = firstnumber * secondnumber;
+        document.getElementById('divide').innerHTML = firstnumber / secondnumber;
+      }
+
+
+
+  </script>
+  </head>
+
+  <body>
+    <h2 id="heading">
+      Calculator Anupam
+    </h2>
+    <div class="" id="tablecontent">
+
+    </div>
+
+    <div class="" id="restore">
+
+    </div>
+
+    <script type="text/javascript">
+          addTableToHTML()
+    </script>
+  </body>
+  </html>
