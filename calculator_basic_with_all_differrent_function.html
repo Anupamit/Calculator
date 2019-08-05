@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <script type="text/javascript">
+
+  let getValue = ()=>{
+    let firstnumber = Number(document.getElementById('dd').value)
+    let secondnumber = Number(document.getElementById('yy').value)
+    let result =  [firstnumber, secondnumber]
+    return result
+  }
+
+  let setValue = (value)=>{
+    document.getElementById('answer').value = value;
+  }
+
+
+    let add = ()=>{
+      let result = getValue()
+      setValue(result[0]+result[1])
+    }
+
+    let substract = ()=>{
+      let result = getValue()
+      if(result[0] >0){
+        setValue(result[0] - result[1]);
+      }
+
+    }
+
+    let multiply = ()=>{
+      let result = getValue()
+      if(result[0]> 0){
+        setValue(result[0] * result[1]);
+      }
+    }
+
+    let divide = ()=>{
+      let result = getValue()
+      if(result[0] > 0 && result[1]>0){
+        setValue(result[0] / result[1])
+
+      }
+    }
+
+    let reset = ()=>{
+      document.getElementById('dd').value =''
+      document.getElementById('yy').value = ''
+      setValue('')
+    }
+
+  </script>
+  <body>
+    <div>
+    Enter the First number : <input type="number" id="dd">
+    </div>
+    Enter the Second number: <input type="number" id="yy">
+    <div>
+    <button onclick="add()">Add</button>
+    <button onclick="substract()">subtract</button>
+    <button onclick="multiply()">multiply</button>
+    <button onclick="divide()">divide</button>
+    </div>
+    <div>
+    <input id="answer">
+    <button onclick="reset()">reset</button>
+    </div>
+  </body>
+</html>
